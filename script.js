@@ -7,8 +7,6 @@ let convert_hash=(pass)=>{
     let xx=brypt.hashSync(pass,10);
     return xx;
 }
-
-
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/page/index.html')
 })
