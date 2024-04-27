@@ -42,6 +42,20 @@
             justify-content: center;
             align-items: center;
         }
+        .hlwbox{
+            border-style: solid;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            width:max-content;
+        }
+        .lol-cont{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        
+        }
     </style>
     <div class="lol-box">
 
@@ -56,5 +70,36 @@
             </form>
         </div>
     </div>
+    <script>
+        // JavaScript code to fetch data from MongoDB and update the <p> tag
+        window.onload = function() {
+            // When the page loads, fetch data from MongoDB
+            fetch('/users')
+                .then(response => response.json())
+                .then(data => {
+                    //make card for each user
+                    data.forEach(user => {
+                        const userBox = document.createElement('div');
+                userBox.classList.add('hlwbox');
+
+                const nameElement = document.createElement('h2');
+                nameElement.innerText = `${user.name}`;
+                userBox.appendChild(nameElement);
+
+                const passwordElement = document.createElement('h4');
+                passwordElement.innerText = `${user.pass}`;
+                userBox.appendChild(passwordElement);
+
+                document.body.appendChild(userBox);
+                const container= document.createElement('div');
+                container.classList.add('lol-cont');
+                container.appendChild(userBox);
+                document.body.appendChild(container);
+            
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        };
+    </script>
 </body>
 </html>
