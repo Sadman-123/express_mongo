@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User_Diary</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        body{
+            background-color: rgb(249, 249, 243);
+            margin: 0;
+            padding: 0;
+        }
+        .lol{
+            text-align: center;
+            margin-top: 50px;
+            background-color: skyblue;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .lol h1{
+            font-family: "Righteous", sans-serif;
+        }
+        .lol input{
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+           
+        }
+        .lol input[type="submit"]{
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .lol-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div class="lol-box">
+
+        <div class="lol">
+            <h1>User Diary</h1>
+            <form action="/user_save" method="post">
+                <input type="text" name="name" placeholder="Name">
+                <br>
+                <input type="password" name="password" placeholder="Password">
+                <br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
